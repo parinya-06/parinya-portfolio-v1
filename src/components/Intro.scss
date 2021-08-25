@@ -1,0 +1,59 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+$min_width: 320px;
+$max_width: 1000px;
+$min_font: 16px;
+$max_font: 22px;
+
+.color-green {
+  @include color-writer($n-primary-white, $primary-green);
+}
+.color-green-sec {
+  @include color-writer($n-primary-white, $secondary-green);
+}
+.color-pink {
+  @include color-writer($n-primary-white, $primary-pink);
+}
+.color-blue {
+  @include color-writer($n-primary-white, $primary-blue-1);
+}
+.color-blue-sec {
+  @include color-writer($n-primary-white, $secondary-blue-1);
+}
+.color-yellow {
+  @include color-writer($n-primary-dark, $primary-yellow);
+}
+.color-dark {
+  @include color-writer($n-primary-white, $n-primary-dark);
+}
+
+.intro__section {
+  padding: 100px 0;
+  #{&}--title {
+    padding: 50px 0;
+  }
+  #{&}--grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 60px;
+    @media screen and (max-width: 625px) {
+      grid-template-columns: 1fr;
+    }
+    h2 {
+      padding-bottom: 20px;
+    }
+    &-left {
+      > div {
+        p {
+          margin: 0 5px 5px 0;
+        }
+      }
+    }
+    &-right {
+      p {
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

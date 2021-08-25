@@ -1,0 +1,86 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.responsive__nav {
+  @include flex-container(row, center, space-between);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $n-primary-white;
+  width: 100%;
+  padding: 0 20px;
+  z-index: 1000;
+  #{&}--logo {
+    z-index: 1000;
+    @include flex-container(row, center, space-between);
+    img {
+      width: 85px;
+      height: auto;
+    }
+    // &-tag {
+    //   background-color: rgba(73, 240, 143, 0.322);
+    //   color: $primary-white-text;
+    //   padding: 5px 10px;
+    //   border-radius: 5px;
+    // }
+  }
+  #{&}--hamburger {
+    z-index: 1000;
+    @include flex-container(row, center, center);
+    > span {
+      @include flex-container(row, center, center);
+    }
+  }
+}
+.show__content {
+  @include flex-container(column, flex-start, center);
+  background-color: $n-primary-white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left: 30px;
+  z-index: 100;
+  animation: translateFromLeft 0.5s;
+  #{&}--list1 {
+    @include flex-container(column, flex-start, center);
+    li {
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+  #{&}--list2 {
+    > li {
+      padding: 20px 20px 0 0;
+      svg {
+        fill: $n-primary-dark;
+      }
+    }
+  }
+  #{&}--btn {
+    margin-top: 20px;
+  }
+}
+.hide__content {
+  display: none;
+}
+
+// Creating the animation
+@keyframes translateFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes translateFromRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

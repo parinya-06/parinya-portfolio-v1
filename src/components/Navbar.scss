@@ -1,0 +1,13 @@
+@import "./variables.scss";
+.active {
+  border-bottom: 1px solid $n-primary-dark;
+  color: $n-primary-dark;
+}
+svg {
+  fill: $n-primary-gray;
+  &:hover {
+    transition: all 0.5s ease;
+    fill: $n-primary-dark;
+    cursor: pointer;
+  }
+}

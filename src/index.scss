@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@import "./components/variables.scss";
+@import "./components/mixins.scss";
+// Code taken from the CSS-tricks for the fluid-typography
+
+// Getting the font
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+body {
+  background-color: $n-primary-white;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $n-primary-dark;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+h1 {
+  @include fluid-type(320px, 1400px, 50px, 60px);
+}
+h2 {
+  @include fluid-type(320px, 1400px, 35px, 40px);
+}
+h3 {
+  @include fluid-type(320px, 1400px, 22px, 25px);
+}
+p,
+ul li {
+  list-style: none;
+  color: $n-primary-gray;
+  @include fluid-type(320px, 1400px, 18px, 20px);
+  line-height: 1.45;
+}
+p.modified {
+  font-weight: 600;
+}
+p.modified-large {
+  @include fluid-type(320px, 1400px, 20px, 22px);
+  line-height: 1.75;
+}
+a {
+  text-decoration: none;
+  display: block;
+  color: $n-primary-gray;
+  transition: all 0.5s ease;
+  &:hover {
+    color: $n-primary-dark;
+  }
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+button,
+.btn {
+  border: none;
+  outline: none;
+  padding: 15px 40px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+}
+@mixin container-width($container-width) {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: $container-width;
+  width: 100%;
+}
+.container-1000 {
+  @include container-width(1000px);
+}
+.container-1200 {
+  @include container-width(1200px);
+}
+.container-1400 {
+  @include container-width(1400px);
+}
+.underline {
+  border-bottom: 1px solid $n-primary-white;
+  color: $n-primary-white;
+}

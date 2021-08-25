@@ -1,0 +1,10 @@
+@import "./variables.scss";
+
+.btn-dark {
+  background-color: $n-primary-dark;
+  color: $n-primary-white;
+
+  @media screen and (max-width: 768px) {
+    background-color: $secondary-blue-1;
+  }
+}
